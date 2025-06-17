@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple ChatBot</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 20px; background: #f0f0f0; }
+    #chatbox { width: 100%; max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+    .message { padding: 10px; margin: 5px 0; border-radius: 5px; }
+    .bot { background: #e0e0e0; text-align: left; }
+    .user { background: #d1e7dd; text-align: right; }
+    #input { width: calc(100% - 90px); padding: 10px; }
+    #send { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+
+<div id="chatbox">
+  <h2>ChatBot</h2>
+  <div id="messages"></div>
+  <input type="text" id="input" placeholder="Type a message...">
+  <button id="send">Send</button>
+</div>
+
+<script>
+  const intents = {
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["hi", "hello", "hey", "how are you"],
+        "responses": ["Hello!", "Hi there!", "Hey!", "Hi, how can I help?"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["bye", "see you", "goodbye"],
+        "responses": ["Bye!", "See you soon!", "Goodbye!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["thanks", "thank you", "that's helpful"],
+        "responses": ["You're welcome!", "No problem!", "Anytime!"]
+      },
+      {
+        "tag": "name",
+        "patterns": ["what is your name?", "who are you?", "name?"],
+        "responses": ["I'm ChatBot, your assistant.", "They call me ChatBot."]
+      }
+    ]
+  };
+
+  const messages = document.getElementById("messages");
+  const input = document.getElementById("input");
+  const send = document.getElementById("send");
+
+  function addMessage(text, sender) {
+    const div = document.createElement("div");
+    div.className = "message " + sender;
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function getResponse(message) {
+    message = message.toLowerCase();
+    for (let intent of intents.intents) {
+      for (let pattern of intent.patterns) {
+        if (message.includes(pattern)) {
+          const responses = intent.responses;
+          return responses[Math.floor(Math.random() * responses.length)];
+        }
+      }
+    }
+    return "I'm not sure I understand. Can you rephrase?";
+  }
+
+  send.onclick = () => {
+    const userMessage = input.value.trim();
+    if (userMessage === "") return;
+    addMessage(userMessage, "user");
+    const botResponse = getResponse(userMessage);
+    addMessage(botResponse, "bot");
+    input.value = "";
+  };
+
+  input.addEventListener("keypress", e => {
+    if (e.key === "Enter") send.click();
+  });
+
+</script>
+
+</body>
+</html>
