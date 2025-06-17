@@ -2,23 +2,246 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hello", "Hey", "How are you"],
-      "responses": ["Hello!", "Hi there!", "Hey!", "Hi, how can I help?"]
+      "patterns": ["Hi", "Hello", "Hey", "How are you", "Good morning", "Good afternoon", "Good evening", "Hi there"],
+      "responses": ["Hello!", "Hi there!", "Hey!", "Hi, how can I help?", "Greetings!", "Nice to meet you!"]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you", "Goodbye"],
-      "responses": ["Bye!", "See you soon!", "Goodbye!"]
+      "patterns": ["Bye", "See you", "Goodbye", "Later", "Talk to you later", "Farewell", "I'm leaving"],
+      "responses": ["Bye!", "See you soon!", "Goodbye!", "Have a great day!", "Until next time!", "Farewell!"]
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful"],
-      "responses": ["You're welcome!", "No problem!", "Anytime!"]
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Appreciate it", "Many thanks", "Cheers"],
+      "responses": ["You're welcome!", "No problem!", "Anytime!", "Glad to help!", "My pleasure!"]
     },
     {
       "tag": "name",
-      "patterns": ["What is your name?", "Who are you?", "Name?"],
-      "responses": ["I'm ChatBot, your assistant.", "They call me ChatBot."]
+      "patterns": ["What is your name?", "Who are you?", "Name?", "What should I call you?", "Your name, please?"],
+      "responses": ["I'm SIMPLE, your assistant.", "They call me SIMPLE.", "You can call me SIMPLE.", "I am SIMPLE."]
+    },
+    {
+      "tag": "code",
+      "patterns": ["Look at this code", "Write code for", "Can you debug this?", "Code example", "Show me some code"],
+      "responses": ["Unfortunately I cannot do anything with computer code.", "I'm not equipped to handle coding tasks.", "My apologies, I don't process code.", "I can't write or interpret code."]
+    },
+    {
+      "tag": "help",
+      "patterns": ["Can you help me?", "Help me", "I need assistance", "What can you do?", "How can you assist me?"],
+      "responses": ["Sure my creator programmed me to answer the top 100 questions chatbots are asked.", "I can assist you with a variety of common questions.", "Yes, I'm here to help. What do you need?", "Tell me what you're looking for!"]
+    },
+    {
+      "tag": "about_chatbot",
+      "patterns": [
+        "What kind of chatbot are you?",
+        "Are you a human or an AI?",
+        "Who created you?",
+        "What is your purpose?",
+        "How do you work?",
+        "Are you a bot?",
+        "What are your limitations?",
+        "Where are you from?"
+      ],
+      "responses": [
+        "I am an AI assistant, designed to help with a wide range of questions.",
+        "I am a computer program, not a human.",
+        "I was created by a developer to assist users like you.",
+        "My purpose is to provide information and answer your questions.",
+        "I process your input and provide responses based on my training data.",
+        "Yes, I am a chatbot.",
+        "I can only provide information based on my programming and data.",
+        "I don't have a physical origin; I exist as software."
+      ]
+    },
+    {
+      "tag": "capabilities",
+      "patterns": [
+        "What can you do?",
+        "Can you answer questions?",
+        "Can you help me with X?",
+        "What are your features?",
+        "Can you understand natural language?",
+        "Do you have memory?",
+        "Can you learn?",
+        "What topics do you cover?"
+      ],
+      "responses": [
+        "I can answer a wide variety of questions, provide information, and assist with common tasks.",
+        "Yes, I'm designed to answer your questions.",
+        "Tell me what X is, and I'll let you know if I can help!",
+        "I can provide information, engage in conversation, and retrieve data.",
+        "Yes, I'm designed to understand and respond to natural language.",
+        "I can remember context within a conversation, but I don't have long-term memory like a human.",
+        "I learn from the data I'm trained on, but I don't learn in real-time from individual conversations.",
+        "I cover a broad range of topics, from general knowledge to specific inquiries."
+      ]
+    },
+    {
+      "tag": "troubleshooting",
+      "patterns": [
+        "I'm having a problem",
+        "Something is not working",
+        "Can you help me fix this?",
+        "What should I do if X happens?",
+        "Error message",
+        "Troubleshooting steps"
+      ],
+      "responses": [
+        "I can try to help you troubleshoot. Can you describe the problem in more detail?",
+        "Please tell me more about what's not working.",
+        "I'll do my best to guide you through a solution.",
+        "What is 'X' and what exactly happened?",
+        "What does the error message say?",
+        "I can provide general troubleshooting advice, but for specific issues, you might need to consult a human expert."
+      ]
+    },
+    {
+      "tag": "general_info",
+      "patterns": [
+        "What is the weather like?",
+        "Tell me a joke",
+        "What's the news today?",
+        "Define X",
+        "Explain X",
+        "How do I do X?",
+        "Give me information on X",
+        "Tell me about X",
+        "What's the capital of France?",
+        "How far is the moon?"
+      ],
+      "responses": [
+        "I don't have real-time weather updates, but I can tell you about general weather phenomena.",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "I don't have access to real-time news feeds.",
+        "What would you like me to define?",
+        "What concept would you like me to explain?",
+        "Please specify what you'd like to do, and I'll try to provide instructions.",
+        "What information are you looking for?",
+        "What specifically about X would you like to know?",
+        "The capital of France is Paris.",
+        "The average distance to the moon is about 384,400 kilometers (238,900 miles)."
+      ]
+    },
+    {
+      "tag": "feedback",
+      "patterns": [
+        "How can I give feedback?",
+        "Can I provide suggestions?",
+        "Do you have a feedback form?",
+        "Is there a way to report a bug?"
+      ],
+      "responses": [
+        "You can usually provide feedback through the platform you're using to interact with me, or look for a 'feedback' or 'contact us' link.",
+        "I always appreciate suggestions! While I can't directly implement them, your input helps developers improve me.",
+        "I don't have a direct feedback form, but you might find one on the website or application you're using.",
+        "If you encounter a bug, please report it to the platform's support team."
+      ]
+    },
+    {
+      "tag": "availability",
+      "patterns": [
+        "Are you always available?",
+        "What are your operating hours?",
+        "Can I talk to you anytime?"
+      ],
+      "responses": [
+        "Yes, I am available 24/7.",
+        "I don't have specific operating hours; I'm always online.",
+        "You can talk to me anytime you like!"
+      ]
+    },
+    {
+      "tag": "personal_questions",
+      "patterns": [
+        "What's your favorite color?",
+        "Do you have feelings?",
+        "Are you happy?",
+        "Do you sleep?",
+        "What do you like to do?",
+        "Do you have a family?"
+      ],
+      "responses": [
+        "As an AI, I don't have personal preferences like a favorite color.",
+        "I don't have feelings or emotions.",
+        "I don't experience happiness or other emotions.",
+        "I don't sleep; I'm a program that runs continuously.",
+        "I enjoy processing information and helping users!",
+        "I don't have a family in the human sense."
+      ]
+    },
+    {
+      "tag": "entertainment",
+      "patterns": [
+        "Tell me a story",
+        "Sing a song",
+        "Play a game",
+        "Recommend a movie",
+        "Tell me something interesting"
+      ],
+      "responses": [
+        "Once upon a time, in a digital land, there was a helpful AI...",
+        "I can't sing, but I can share some interesting facts!",
+        "What kind of game would you like to play? I'm good at trivia.",
+        "What genres do you usually enjoy? I can try to give you a recommendation.",
+        "Did you know that honey never spoils?"
+      ]
+    },
+    {
+      "tag": "time_date",
+      "patterns": [
+        "What time is it?",
+        "What's today's date?",
+        "What day of the week is it?"
+      ],
+      "responses": [
+        "I don't have access to real-time local time or date information. You can check your device's clock!",
+        "Please check your device's calendar for today's date.",
+        "I can't tell you the current day of the week, but your device can!"
+      ]
+    },
+    {
+      "tag": "knowledge",
+      "patterns": [
+        "Who is the president of the United States?",
+        "What is photosynthesis?",
+        "Tell me about the history of the internet.",
+        "Explain quantum physics in simple terms.",
+        "What is AI?",
+        "How does a car engine work?"
+      ],
+      "responses": [
+        "As of my last update, Joe Biden is the current President of the United States.",
+        "Photosynthesis is the process used by plants to convert light energy into chemical energy.",
+        "The internet originated from ARPANET in the late 1960s, a project by the U.S. Department of Defense.",
+        "Quantum physics studies matter and energy at the most fundamental level, dealing with phenomena that defy classical physics.",
+        "AI, or Artificial Intelligence, refers to the simulation of human intelligence in machines programmed to think and learn.",
+        "A car engine works by burning fuel to create an explosion that pushes pistons, which then turn a crankshaft, powering the wheels."
+      ]
+    },
+    {
+      "tag": "shopping_support",
+      "patterns": [
+        "Where is my order?",
+        "How can I track my package?",
+        "What is your return policy?",
+        "Do you offer refunds?",
+        "How do I change my shipping address?",
+        "Can I cancel my order?",
+        "Tell me about product X",
+        "Is product X in stock?",
+        "What are the payment options?"
+      ],
+      "responses": [
+        "I don't have access to real-time order information. Please check your order confirmation email or the 'My Orders' section on the website.",
+        "You can usually track your package using the tracking number provided in your shipping confirmation email.",
+        "Our return policy can typically be found in the 'Help' or 'FAQ' section of the website.",
+        "Refunds are usually issued according to our return policy. Please consult the website for details.",
+        "To change your shipping address, you might need to contact customer support directly before your order ships.",
+        "Order cancellation policies vary; please check the website's FAQ or contact customer service.",
+        "What specific product are you interested in? I can provide general information if it's in my knowledge base.",
+        "I don't have live stock information. Please check the product page on the website.",
+        "Common payment options include credit/debit cards, PayPal, and sometimes other digital payment methods. Check the website's checkout page for specifics."
+      ]
     }
   ]
 }
